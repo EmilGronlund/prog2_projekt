@@ -40,20 +40,20 @@ slime = Slime()
 while True:
     chosen_monster = input("Välj ett monster, (D)ragon eller (S)lime: ").lower().strip()
 
-    if chosen_monster == "d":
+    if chosen_monster == "d" or chosen_monster == "dragon":
         player = Player(dragon)
         enemy = slime
-        print("Du valde Dragon!")
+        print("Du valde Dragon!🐲")
         break
 
-    elif chosen_monster == "s":
+    elif chosen_monster == "s" or chosen_monster == "slime":
         player = Player(slime)
         enemy = dragon
-        print("Du valde Slime!")
+        print("Du valde Slime!🟩")
         break
 
     else:
-        print("Ange ett giltigt val!")
+        print("Ange ett giltigt val!⚠️")
 
 class Battle:
     def __init__(self, player, enemy):
@@ -64,8 +64,8 @@ class Battle:
         while True:
             
             print()
-            print(self.player.monster.name, "HP:", self.player.monster.get_hp())
-            print(self.enemy.name, "HP:", self.enemy.get_hp())
+            print(self.player.monster.name, "HP:", self.player.monster.get_hp(), "❤️")
+            print(self.enemy.name, "HP:", self.enemy.get_hp(), "❤️")
             
             choice = input("Välj (A)ttack eller (H)eal: ").lower().strip()
 
@@ -76,17 +76,17 @@ class Battle:
                 self.player.monster.heal(10)
 
             else:
-                print("Ange ett giltigt val!")
+                print("Ange ett giltigt val!⚠️")
                 continue
 
             if self.enemy.get_hp() <= 0:
-                print("Du vann!")
+                print("Du vann!🏆")
                 break
 
             self.enemy.attack(self.player.monster)
 
             if self.player.monster.get_hp() <= 0:
-                print("Du förlorade!")
+                print("Du förlorade!💀")
                 break
 
 battle = Battle(player, enemy)
