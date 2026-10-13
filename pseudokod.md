@@ -31,6 +31,18 @@ SKAPA klass Player
     ha ett Monster
 
 
+UPPREPA tills spelaren gör ett giltigt val:
+    Fråga vilket monster spelaren vill välja
+
+    Om Dragon väljs:
+        Spelaren får Dragon
+        Fienden blir Slime
+
+    Annars om Slime väljs:
+        Spelaren får Slime
+        Fienden blir Dragon
+
+
 SKAPA klass Battle
     ha två Monster
 
