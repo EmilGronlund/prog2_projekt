@@ -1,7 +1,8 @@
 SKAPA klass Monster
     ha privat HP
     ha namn
-    ha level
+    ha attack_power
+    ha heal_power
 
     METOD attack()
         attackera motståndaren
@@ -9,8 +10,11 @@ SKAPA klass Monster
     METOD take_damage(skada)
         minska HP
 
-    METOD heal(mängd)
+    METOD heal()
         öka HP
+
+    METOD get_hp()
+        returnera privat HP
 
 
 SKAPA klass Dragon som ärver Monster
